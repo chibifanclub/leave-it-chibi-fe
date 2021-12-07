@@ -17,6 +17,8 @@ const LandingPage = () => {
     <main className='landing-page'>
       <section className='emergency-instructions'>
         <h2>EMERGENCY INSTRUCTIONS</h2>
+        <p>(888) 426-4435 </p>
+        <p>to speak with the ASPCA Animal Poison Control Center (APCC), 24 hours a day, 365 days a year. A consultation fee may apply.</p>
       </section>
       <section className='landing-form-container'>
         <h2>What did your pet eat?</h2>
@@ -30,7 +32,7 @@ const LandingPage = () => {
         </form>
       </section>
       <section className='item-cards-container'>
-        { cards }
+        {cards}
       </section>
     </main>
   )
