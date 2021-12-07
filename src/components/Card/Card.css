@@ -1,7 +1,7 @@
 .item-card {
-  width: 250px;
-  height: 85%;
-  margin: 0% 2% 0% 2%;
+  width: 22%;
+  height: 25vh;
+  margin: 5%;
   border: solid black 2px;
   display: flex;
   flex-direction: column;
