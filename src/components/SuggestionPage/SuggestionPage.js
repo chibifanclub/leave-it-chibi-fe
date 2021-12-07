@@ -12,7 +12,8 @@ const SuggestionPage = () => {
         />
         <textarea className="suggestion-description"
           type='text'
-          placeholder='Description of the suggestion'
+          placeholder='Description of your suggestion'
+          maxLength='150'
         />
         <button>Submit Suggestion</button>
       </form>
