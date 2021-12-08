@@ -9,8 +9,6 @@ const LandingPage = () => {
     <Card />,
     <Card />,
     <Card />,
-    <Card />,
-    <Card />,
   ]
 
   return (

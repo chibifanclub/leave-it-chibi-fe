@@ -2,5 +2,14 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* overflow: scroll; */
+}
+
+footer {
+  width: 100vw;
+  height: 8vh;
+  background-color: black;
+  align-self: flex-end;
 }

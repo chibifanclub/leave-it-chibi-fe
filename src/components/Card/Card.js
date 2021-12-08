@@ -4,7 +4,7 @@ import './Card.css'
 const Card = () => {
   return (
     <article className='item-card'>
-      <h1>TEST</h1>
+      <img src='https://i.imgur.com/7PvGrYp.jpeg' className='card-img'/>
     </article>
   )
 }
