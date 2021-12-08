@@ -34,3 +34,28 @@
 .suggestion-form >h2 {
   font-size: 3rem;
 }
+
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 90%;
+  border: solid black 2px;
+  align-items: center;
+}
+
+.suggestion-title {
+  width: 60%;
+  margin: 1rem;
+}
+
+.suggestion-description {
+  height: 50%;
+  width: 60%;
+  margin: 1rem;
+  text-align: left;
+}
+
+.suggestion-form >h2 {
+  font-size: 3rem;
+}
