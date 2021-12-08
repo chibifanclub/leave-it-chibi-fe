@@ -1,61 +1,50 @@
 import React, { useState } from 'react'
 import './FindVet.css'
-import { Country, State, City } from 'country-state-city'
+import csc from '../../packages/csc.js'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 const FindVet = () => {
 
-
-  const getStates = () => {
-    return (
-      State.getStatesOfCountry('US').map((state, index) => {
-        return({
-          id: index,
-          name: state.name
-        })
-      })
-    )
-  }
-  const getCities = city => {
-    return (
-      City.getCitiesOfState('US', city).map((city, index) => {
-        return ({
-          id: index,
-          name: city.name
-        })
-      })
-    )
-  }
-
   const [selectedState, updateSelectedState] = useState('')
-  const [cities, updateCities] = useState('')
+  const [selectedCity, updateSelectedCity] = useState('')
 
-  const handleOnSelect = item => {
-    updateSelectedState(State.getStatesOfCountry('US')[item.id])
+  const handleOnSelectState = item => {
+    updateSelectedState(csc.getState(item))
+  }
+
+  const handleOnSelectCity = item => {
+    updateSelectedCity(csc.getCity(item, selectedState.isoCode))
   }
 
   return (
     <main className='find-vet-page'>
       <form className='find-vet-form'>
         <h2>Find a Vet</h2>
-        <label>State</label>
-        <div className='state-input'>
+        <div className='find-vet-input'>
+        <label className='find-vet-label'>State</label>
           <ReactSearchAutocomplete
-            items={getStates()}
-            maxResults='2'
-            onSelect={handleOnSelect}
+            items={csc.getStates()}
+            maxResults='4'
+            onSelect={handleOnSelectState}
           />
         </div>
         <>
           {
             selectedState &&
-            <div className='state-input'>
-              <label>City</label>
+            <div className='find-vet-input'>
+              <label className='find-vet-label'>City</label>
               <ReactSearchAutocomplete
-                items={getCities(selectedState.isoCode)}
-                maxResults='2'
+                items={csc.getCities(selectedState.isoCode)}
+                maxResults='4'
+                onSelect={handleOnSelectCity}
               />
             </div>
+          }
+        </>
+        <>
+          {
+            selectedCity &&
+            <button className='find-vet-btn'>Search</button>
           }
         </>
       </form>
