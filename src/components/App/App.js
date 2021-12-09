@@ -4,6 +4,8 @@ import LandingPage from '../LandingPage/LandingPage'
 import FindVet from '../FindVet/FindVet'
 import SuggestionPage from '../SuggestionPage/SuggestionPage'
 import './App.css';
+import store from '../../redux/store';
+import { updateState } from '../../redux/find-vet-slice';
 
 function App() {
   return (
@@ -12,15 +14,15 @@ function App() {
       <Routes>
         <Route
           path='/'
-          element={ <LandingPage /> }
+          element={<LandingPage />}
         />
         <Route
           path='/find-vet'
-          element={ <FindVet /> }
+          element={<FindVet />}
         />
         <Route
           path='/suggestion'
-          element={ <SuggestionPage /> }
+          element={<SuggestionPage />}
         />
       </Routes>
       <footer>
@@ -28,5 +30,13 @@ function App() {
     </div>
   );
 }
+
+// console.log('find vet slice', findVetSlice.reducer);
+const test = async () => {
+  await store.dispatch(updateState());
+  console.log('store', store.getState());
+}
+
+test();
 
 export default App;
