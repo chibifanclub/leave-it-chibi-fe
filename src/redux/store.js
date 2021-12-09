@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { updateState } from './find-vet-slice';
+import findVetReducer from './find-vet-slice'
 // import findVetSlice from './find-vet-slice';
 
 const store = configureStore({
   reducer: {
-    findVet: updateState,
+    findVet: findVetReducer,
   },
 })
 

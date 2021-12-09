@@ -2,18 +2,22 @@ import React, { useState } from 'react'
 import './FindVet.css'
 import csc from '../../packages/csc.js'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import { updateState, updateCity } from '../../redux/find-vet-slice';
+import store from '../../redux/store';
+import { useSelector } from 'react-redux';
+
 
 const FindVet = () => {
 
-  const [selectedState, updateSelectedState] = useState('')
-  const [selectedCity, updateSelectedCity] = useState('')
+  const selectedState = useSelector(state => state.findVet.state);
+  const selectedCity = useSelector(state => state.findVet.city)
 
   const handleOnSelectState = item => {
-    updateSelectedState(csc.getState(item))
+    store.dispatch(updateState(csc.getState(item)))
   }
 
   const handleOnSelectCity = item => {
-    updateSelectedCity(csc.getCity(item, selectedState.isoCode))
+    store.dispatch(updateCity(csc.getCity(item, selectedState.isoCode)))
   }
 
   return (

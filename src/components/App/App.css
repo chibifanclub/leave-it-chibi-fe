@@ -13,3 +13,7 @@ footer {
   background-color: black;
   align-self: flex-end;
 }
+
+.App > p {
+  color: white;
+}

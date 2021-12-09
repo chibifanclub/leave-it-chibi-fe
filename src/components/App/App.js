@@ -6,10 +6,15 @@ import FindVet from '../FindVet/FindVet'
 import SuggestionPage from '../SuggestionPage/SuggestionPage'
 import './App.css';
 import store from '../../redux/store';
+
 import { updateState } from '../../redux/find-vet-slice';
 import { useSelector } from 'react-redux';
+import { createSelector } from '@reduxjs/toolkit';
+
 
 function App() {
+  const testVar = useSelector(state => state.findVet.state);
+
   return (
     <div className="App">
       <Header />
@@ -32,13 +37,5 @@ function App() {
     </div>
   );
 }
-
-// console.log('find vet slice', findVetSlice.reducer);
-const test = async () => {
-  const { state } = useSelector(state => state.findVet);
-  console.log('state', state);
-}
-
-test();
 
 export default App;
