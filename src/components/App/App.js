@@ -1,3 +1,4 @@
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header from '../Header/Header'
 import LandingPage from '../LandingPage/LandingPage'
@@ -6,6 +7,7 @@ import SuggestionPage from '../SuggestionPage/SuggestionPage'
 import './App.css';
 import store from '../../redux/store';
 import { updateState } from '../../redux/find-vet-slice';
+import { useSelector } from 'react-redux';
 
 function App() {
   return (
@@ -33,8 +35,8 @@ function App() {
 
 // console.log('find vet slice', findVetSlice.reducer);
 const test = async () => {
-  await store.dispatch(updateState());
-  console.log('store', store.getState());
+  const { state } = useSelector(state => state.findVet);
+  console.log('state', state);
 }
 
 test();
