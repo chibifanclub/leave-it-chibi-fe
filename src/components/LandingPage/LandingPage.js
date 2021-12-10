@@ -1,15 +1,25 @@
 import React from 'react'
 import Card from '../Card/Card'
+import { updateQuery } from '../../packages/redux/search-slice';
+import { createCards } from '../../packages/redux/cards-slice'
+import store from '../../packages/redux/store';
+import { useSelector } from 'react-redux';
+import apiCalls from '../../apiCalls'
 import './LandingPage.css'
 
 const LandingPage = () => {
-  const cards = [
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-  ]
+  const query = useSelector(state => state.search.query)
+  const cards = useSelector(state => state.cards.cards)
+
+  const submitSearch = async e => {
+    e.preventDefault()
+    const searchResults = await apiCalls.searchItems(query)
+    store.dispatch(createCards(searchResults.data))
+  }
+
+  const handleChange = e => {
+    store.dispatch(updateQuery(e.target.value))
+  }
 
   return (
     <main className='landing-page'>
@@ -20,17 +30,21 @@ const LandingPage = () => {
       </section>
       <section className='landing-form-container'>
         <h2>What did your pet eat?</h2>
-        <form className='landing-form'>
+        <form
+          className='landing-form'
+          onSubmit={submitSearch}
+        >
           <input
             type='text'
             placeholder='Enter Search'
             className='landing-form-input'
+            onChange={handleChange}
           />
           <button className='landing-form-btn'>Search</button>
         </form>
       </section>
       <section className='item-cards-container'>
-        {cards}
+        { cards && cards }
       </section>
     </main>
   )

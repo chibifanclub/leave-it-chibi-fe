@@ -1,4 +1,8 @@
 import React from 'react'
+import { updateQuery } from '../../packages/redux/search-slice';
+import store from '../../packages/redux/store';
+import { useSelector } from 'react-redux';
+import apiCalls from '../../apiCalls'
 import './SuggestionPage.css'
 
 const SuggestionPage = () => {
