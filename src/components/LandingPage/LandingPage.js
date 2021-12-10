@@ -25,7 +25,7 @@ const LandingPage = () => {
       store.dispatch(createCards(results))
       store.dispatch(updateSearchError(''))
     } else {
-      store.dispatch(updateSearchError('That item does not exist in our database'))
+      store.dispatch(updateSearchError(`We couldn't find that item`))
       store.dispatch(createCards([]))
     }
   }
