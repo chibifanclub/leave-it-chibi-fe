@@ -1,38 +1,53 @@
 import React from 'react'
 import Card from '../Card/Card'
+import { updateQuery, updateSearchError } from '../../packages/redux/search-slice';
+import { createCards } from '../../packages/redux/cards-slice'
+import store from '../../packages/redux/store';
+import { useSelector } from 'react-redux';
+import apiCalls from '../../apiCalls'
 import './LandingPage.css'
 
 const LandingPage = () => {
-  const cards = [
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-    <Card />,
-  ]
+  const query = useSelector(state => state.search.query)
+  const cards = useSelector(state => state.cards.cards)
+  const searchError = useSelector(state => state.search.error)
+
+  const submitSearch = async e => {
+    e.preventDefault()
+    if( e.target.value ){
+      const searchResults = await apiCalls.searchItems(e.target.value)
+      reviewSearchResults(searchResults.data)
+    }
+  }
+
+  const reviewSearchResults = results => {
+    if(results) {
+      store.dispatch(createCards(results))
+      store.dispatch(updateSearchError(''))
+    } else {
+      store.dispatch(updateSearchError(`We couldn't find that item`))
+      store.dispatch(createCards([]))
+    }
+  }
 
   return (
     <main className='landing-page'>
-      <section className='emergency-instructions'>
-        <h2>EMERGENCY INSTRUCTIONS</h2>
-        <p>(888) 426-4435 </p>
-        <p>to speak with the ASPCA Animal Poison Control Center (APCC), 24 hours a day, 365 days a year. A consultation fee may apply.</p>
-      </section>
       <section className='landing-form-container'>
         <h2>What did your pet eat?</h2>
-        <form className='landing-form'>
+        <form
+          className='landing-form'
+        >
           <input
             type='text'
             placeholder='Enter Search'
             className='landing-form-input'
+            onChange={submitSearch}
           />
-          <button className='landing-form-btn'>Search</button>
         </form>
+        <>{searchError && searchError}</>
       </section>
       <section className='item-cards-container'>
-        {cards}
+        { cards && cards }
       </section>
     </main>
   )

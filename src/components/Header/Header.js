@@ -5,10 +5,13 @@ import './Header.css'
 const Header = () => {
   return (
     <header>
-      <img
-        src='https://uploads-ssl.webflow.com/58d3fe15690e6c3915136560/5b21e6863b657bdeea83db38_VHCG%20New%20Logo%20Black%20on%20White%20256x256.jpg'
-        className='header-img'
+      <div className='header-logo'>
+        <img
+          src='https://uploads-ssl.webflow.com/58d3fe15690e6c3915136560/5b21e6863b657bdeea83db38_VHCG%20New%20Logo%20Black%20on%20White%20256x256.jpg'
+          className='header-img'
         />
+        <h1>Leave it, Chibi</h1>
+      </div>
       <nav>
         <Link to='/'>
           <button className='nav-btn'>Home</button>

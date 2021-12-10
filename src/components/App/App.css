@@ -2,5 +2,26 @@
   width: 100vw;
   height: 100vh;
   text-align: center;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.emergency-instructions {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EE6055;
+}
+
+footer {
+  width: 100vw;
+  height: 8vh;
+  background-color: black;
+  align-self: flex-end;
+}
+
+button {
+  cursor: pointer;
 }
