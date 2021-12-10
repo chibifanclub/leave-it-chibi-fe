@@ -39,5 +39,8 @@
 }
 
 .item-attributes {
+  width: 90%;
+  height: 70%;
+  overflow: hidden;
   margin: 1% 5%;
 }
