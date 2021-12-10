@@ -14,7 +14,7 @@ const LandingPage = () => {
 
   const submitSearch = async e => {
     e.preventDefault()
-    const searchResults = await apiCalls.searchItems(query)
+    const searchResults = await apiCalls.searchItems(e.target.value)
     reviewSearchResults(searchResults.data)
   }
 
@@ -28,25 +28,19 @@ const LandingPage = () => {
     }
   }
 
-  const handleChange = e => {
-    store.dispatch(updateQuery(e.target.value))
-  }
-
   return (
     <main className='landing-page'>
       <section className='landing-form-container'>
         <h2>What did your pet eat?</h2>
         <form
           className='landing-form'
-          onSubmit={submitSearch}
         >
           <input
             type='text'
             placeholder='Enter Search'
             className='landing-form-input'
-            onChange={handleChange}
+            onChange={submitSearch}
           />
-          <button className='landing-form-btn'>Search</button>
         </form>
         <>{searchError && searchError}</>
       </section>
