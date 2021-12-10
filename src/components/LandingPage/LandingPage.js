@@ -14,8 +14,10 @@ const LandingPage = () => {
 
   const submitSearch = async e => {
     e.preventDefault()
-    const searchResults = await apiCalls.searchItems(e.target.value)
-    reviewSearchResults(searchResults.data)
+    if( e.target.value ){
+      const searchResults = await apiCalls.searchItems(e.target.value)
+      reviewSearchResults(searchResults.data)
+    }
   }
 
   const reviewSearchResults = results => {
