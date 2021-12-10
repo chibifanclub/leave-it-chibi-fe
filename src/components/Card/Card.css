@@ -8,13 +8,13 @@
   background-color: #60D394;
   cursor: pointer;
   text-align: left;
+  filter: drop-shadow(5px 5px 4px black)
+
 }
 
 .item-card:hover {
-  width: 20vw;
-  height: 43vh;
-  margin: 0px;
-  filter: drop-shadow(5px 5px 4px black)
+  margin-bottom: 5vh;
+  filter: drop-shadow(5px 10px 8px black)
 }
 
 .card-img {
