@@ -7,8 +7,19 @@ header {
   background-color: white;
 }
 
+.header-logo {
+  width: 50vw;
+  height: 10vh;
+  display: flex;
+}
+
+.header-logo > h1 {
+  align-self: flex-end;
+  font-size: 3.5rem;
+}
+
 .header-img {
-  width: 5%;
+  width: 5vw;
   height: auto;
   margin: 0% 0% 0% 2%
 }

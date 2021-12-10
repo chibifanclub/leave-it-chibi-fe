@@ -1,26 +1,26 @@
 .suggestion-page {
-  width: 100%;
-  height: 82%;
-  background-color: white;
+  width: 100vw;
+  height: 77vh;
+  background-color: #FFE7AD;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
 }
 
 .suggestion-form {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 90%;
-  border: solid black 2px;
+  width: 40vw;
+  height: 55vh;
   align-items: center;
-  background-color: red;
-  border-radius: 40px;
+  justify-content: center;
+  background-color: #60D394;
+  border-radius: 20px;
 }
 
 .suggestion-title {
   width: 60%;
-  margin: 1rem;
+  margin: 5% 0% 0% 0%;
 }
 
 .suggestion-description {
@@ -35,27 +35,9 @@
   font-size: 3rem;
 }
 
-.suggestion-form {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: 90%;
-  border: solid black 2px;
-  align-items: center;
-}
+.suggestion-img {
+  width: 40vw;
+  height: 55vh;
+  border-radius: 20px;
 
-.suggestion-title {
-  width: 60%;
-  margin: 1rem;
-}
-
-.suggestion-description {
-  height: 50%;
-  width: 60%;
-  margin: 1rem;
-  text-align: left;
-}
-
-.suggestion-form >h2 {
-  font-size: 3rem;
 }

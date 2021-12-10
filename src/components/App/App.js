@@ -12,6 +12,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <section className='emergency-instructions'>
+        <h2>EMERGENCY INSTRUCTIONS</h2>
+        <p>(888) 426-4435 </p>
+        <p>to speak with the ASPCA Animal Poison Control Center (APCC), 24 hours a day, 365 days a year. A consultation fee may apply.</p>
+      </section>
       <Routes>
         <Route
           path='/'

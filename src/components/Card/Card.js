@@ -10,7 +10,10 @@ const Card = ({ item }) => {
   return (
     <article className='item-card'>
       <img src={item.attributes.image} className='card-img'/>
-      <h3 className='card-heading'>{capitalize(item.attributes.name)}</h3>
+      <div className='card-attributes'>
+        <h3 className='card-heading'>{capitalize(item.attributes.name)}</h3>
+        <p className='item-attributes'>{ item.attributes.description }</p>
+      </div>
     </article>
   )
 }

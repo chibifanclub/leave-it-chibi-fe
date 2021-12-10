@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './FindVet.css'
 import csc from '../../packages/csc.js'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import { updateState, updateCity } from '../../redux/find-vet-slice';
+import { updateState, updateCity } from '../../packages/redux/find-vet-slice';
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
 

@@ -21,6 +21,10 @@ const SuggestionPage = () => {
         />
         <button>Submit Suggestion</button>
       </form>
+      <img
+        src='https://s36700.pcdn.co/wp-content/uploads/2017/10/A-hungry-dog-looking-up-near-his-food-and-water-bowl-600x400.jpg.optimal.jpg'
+        className='suggestion-img'
+      />
     </main>
   )
 }

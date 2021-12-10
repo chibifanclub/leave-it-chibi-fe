@@ -4,7 +4,15 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* overflow: scroll; */
+}
+
+.emergency-instructions {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EE6055;
 }
 
 footer {
@@ -12,10 +20,6 @@ footer {
   height: 8vh;
   background-color: black;
   align-self: flex-end;
-}
-
-.App > p {
-  color: white;
 }
 
 button {
