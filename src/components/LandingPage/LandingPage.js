@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { updateQuery } from '../../packages/redux/search-slice';
+import { updateQuery, updateSearchError } from '../../packages/redux/search-slice';
 import { createCards } from '../../packages/redux/cards-slice'
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
@@ -10,11 +10,22 @@ import './LandingPage.css'
 const LandingPage = () => {
   const query = useSelector(state => state.search.query)
   const cards = useSelector(state => state.cards.cards)
+  const searchError = useSelector(state => state.search.error)
 
   const submitSearch = async e => {
     e.preventDefault()
     const searchResults = await apiCalls.searchItems(query)
-    store.dispatch(createCards(searchResults.data))
+    reviewSearchResults(searchResults.data)
+  }
+
+  const reviewSearchResults = results => {
+    if(results) {
+      store.dispatch(createCards(results))
+      store.dispatch(updateSearchError(''))
+    } else {
+      store.dispatch(updateSearchError('That item does not exist in our database'))
+      store.dispatch(createCards([]))
+    }
   }
 
   const handleChange = e => {
@@ -42,6 +53,7 @@ const LandingPage = () => {
           />
           <button className='landing-form-btn'>Search</button>
         </form>
+        <>{searchError && searchError}</>
       </section>
       <section className='item-cards-container'>
         { cards && cards }

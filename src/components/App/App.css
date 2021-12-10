@@ -17,3 +17,7 @@ footer {
 .App > p {
   color: white;
 }
+
+button {
+  cursor: pointer;
+}
