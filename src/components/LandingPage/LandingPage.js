@@ -5,6 +5,7 @@ import { createCards } from '../../packages/redux/cards-slice'
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
 import apiCalls from '../../apiCalls'
+import Modal from '../Modal/Modal'
 import './LandingPage.css'
 
 const LandingPage = () => {
@@ -14,14 +15,14 @@ const LandingPage = () => {
 
   const submitSearch = async e => {
     e.preventDefault()
-    if( e.target.value ){
+    if (e.target.value) {
       const searchResults = await apiCalls.searchItems(e.target.value)
       reviewSearchResults(searchResults.data)
     }
   }
 
   const reviewSearchResults = results => {
-    if(results) {
+    if (results) {
       store.dispatch(createCards(results))
       store.dispatch(updateSearchError(''))
     } else {
@@ -47,8 +48,9 @@ const LandingPage = () => {
         <>{searchError && searchError}</>
       </section>
       <section className='item-cards-container'>
-        { cards && cards }
+        {cards && cards}
       </section>
+      {/* <Modal /> */}
     </main>
   )
 }
