@@ -31,7 +31,7 @@ function App() {
           element={<SuggestionPage />}
         />
       </Routes>
-      <Modal />
+      {/* <Modal /> */}
       <footer>
       </footer>
     </div>

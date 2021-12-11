@@ -1,4 +1,4 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const findVetSlice = createSlice({
   name: 'findVetForm',
@@ -8,10 +8,10 @@ const findVetSlice = createSlice({
   },
   reducers: {
     updateState: (state, action) => {
-      state.state = action.payload
+      state.state = action.payload.isoCode
     },
     updateCity: (state, action) => {
-      state.city = action.payload
+      state.city = action.payload.name
     }
   }
 })

@@ -5,7 +5,6 @@ import { createCards } from '../../packages/redux/cards-slice'
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
 import apiCalls from '../../apiCalls'
-import Modal from '../Modal/Modal'
 import './LandingPage.css'
 
 const LandingPage = () => {
@@ -50,7 +49,6 @@ const LandingPage = () => {
       <section className='item-cards-container'>
         {cards && cards}
       </section>
-      {/* <Modal /> */}
     </main>
   )
 }

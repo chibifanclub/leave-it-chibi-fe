@@ -6,7 +6,19 @@ const apiCalls = {
         return response.json()
       })
       .catch(error => {
-        console.error(error, 'error')
+        console.error(error, 'error with searchItems')
+        return error.message
+      })
+  },
+
+  findVet(query) {
+    return fetch(`https://chibi-be.herokuapp.com/api/v1/veterinarians?location=${query}`)
+      .then(response => {
+        this.checkResponse(response)
+        return response.json()
+      })
+      .catch(error => {
+        console.error(error, 'error with findVet')
         return error.message
       })
   },
