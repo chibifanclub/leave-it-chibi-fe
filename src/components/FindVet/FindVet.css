@@ -3,6 +3,7 @@
   height: 77vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #FFE7AD
 }
 
@@ -43,4 +44,22 @@
   border-radius: 12px;
   border: none;
   cursor: pointer;
+}
+
+.vet-cards-container {
+  height: 77vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vet-card {
+  width: 12vw;
+  height: 35vh;
+  margin: 0vh 1vw;
+}
+
+.vet-card-img {
+  max-height: 40%;
+  margin-top: 10%;
 }

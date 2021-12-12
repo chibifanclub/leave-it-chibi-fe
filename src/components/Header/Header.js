@@ -1,8 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Nav from 'react-bootstrap/Nav'
 import './Header.css'
+import { updateActiveKey } from '../../packages/redux/header-slice'
+import store from '../../packages/redux/store';
+import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom"
 
-const Header = () => {
+
+const Header = props => {
+  const activeKey = useSelector(state => state.header.activeKey)
+  const navigate = useNavigate()
+
+  const handleChange = key => {
+    store.dispatch(updateActiveKey(key))
+    navigate(`/${key}`)
+  }
+
   return (
     <header>
       <div className='header-logo'>
@@ -12,17 +26,17 @@ const Header = () => {
         />
         <h1>Leave it, Chibi</h1>
       </div>
-      <nav>
-        <Link to='/'>
-          <button className='nav-btn'>Home</button>
-        </Link>
-        <Link to='/find-vet'>
-          <button className='nav-btn'>Find a Vet</button>
-        </Link>
-        <Link to='/suggestion'>
-          <button className='nav-btn'>Make a Suggestion</button>
-        </Link>
-      </nav>
+      <Nav variant='pills' activeKey={activeKey} className='mb-2' onSelect={handleChange}>
+        <Nav.Item>
+          <Nav.Link eventKey='home'>Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey='find-vet'>Find a Vet</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey='suggestion'>Make a Suggestion</Nav.Link>
+        </Nav.Item>
+      </Nav>
     </header>
   )
 }

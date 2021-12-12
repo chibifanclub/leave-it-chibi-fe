@@ -2,16 +2,33 @@ import React, { useState } from 'react'
 import './FindVet.css'
 import csc from '../../packages/csc.js'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import { updateState, updateCity } from '../../packages/redux/find-vet-slice';
+import { updateState, updateCity, createCards } from '../../packages/redux/find-vet-slice';
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
 import apiCalls from '../../apiCalls'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
+
 
 
 const FindVet = () => {
 
   const selectedState = useSelector(state => state.findVet.state);
   const selectedCity = useSelector(state => state.findVet.city)
+  const cards = useSelector(state => state.findVet.cards).slice(0, 5).map(vet =>{
+    return (
+      <Card as={Col} className='vet-card'>
+        <Card.Img variant='top' src={vet.attributes.image} className='vet-card-img'/>
+        <Card.Body>
+          <Card.Title className='mb-3'>{vet.attributes.name}</Card.Title>
+          <Card.Subtitle className='mb-2'>{vet.attributes.phone}</Card.Subtitle>
+          <Card.Text>{vet.attributes.address}</Card.Text>
+        </Card.Body>
+      </Card>
+    )
+  })
 
   const handleOnSelectState = item => {
     store.dispatch(updateState(csc.getState(item)))
@@ -25,7 +42,8 @@ const FindVet = () => {
     e.preventDefault();
     const location = `${selectedCity}, ${selectedState}`
     const vets = await apiCalls.findVet(location)
-    console.log('vet', vets);
+    store.dispatch(createCards(vets.data))
+    console.log(vets.data)
   }
 
   return (
@@ -61,6 +79,11 @@ const FindVet = () => {
           }
         </>
       </form>
+      <Container className='vet-cards-container'>
+        <Row>
+          {cards}
+        </Row>
+      </Container>
     </main>
   )
 }

@@ -4,7 +4,8 @@ const findVetSlice = createSlice({
   name: 'findVetForm',
   initialState: {
     state: '',
-    city: ''
+    city: '',
+    cards: []
   },
   reducers: {
     updateState: (state, action) => {
@@ -12,9 +13,12 @@ const findVetSlice = createSlice({
     },
     updateCity: (state, action) => {
       state.city = action.payload.name
+    },
+    createCards: (state, action) => {
+      state.cards = action.payload
     }
   }
 })
 
-export const { updateState, updateCity } = findVetSlice.actions;
+export const { updateState, updateCity, createCards } = findVetSlice.actions;
 export default findVetSlice.reducer
