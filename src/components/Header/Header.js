@@ -28,7 +28,7 @@ const Header = props => {
       </div>
       <Nav variant='pills' activeKey={activeKey} className='mb-2' onSelect={handleChange}>
         <Nav.Item>
-          <Nav.Link eventKey='home'>Home</Nav.Link>
+          <Nav.Link eventKey=''>Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey='find-vet'>Find a Vet</Nav.Link>

@@ -18,7 +18,7 @@ function App() {
       </section>
       <Routes>
         <Route
-          path='/home'
+          path='/'
           element={<LandingPage />}
         />
         <Route
