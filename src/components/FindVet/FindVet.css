@@ -3,12 +3,13 @@
   height: 77vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #FFE7AD
 }
 
 .find-vet-form {
   width: 20%;
-  height: 50%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,4 +44,32 @@
   border-radius: 12px;
   border: none;
   cursor: pointer;
+}
+
+.vet-cards-container {
+  height: 77vh;
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  overflow: scroll;
+  flex-wrap: wrap;
+}
+
+.vet-card {
+  width: 15vw;
+  height: 30vh;
+  margin-top: none;
+  margin-right: none;
+  margin-left: none;
+  margin: 2vh 1vw 2vh 1vw;
+  display: flex;
+  align-items: center;
+}
+
+.vet-card-img {
+  max-height: 55%;
+  width: auto;
+  max-width: 90%;
+  margin-top: 1vh;
 }

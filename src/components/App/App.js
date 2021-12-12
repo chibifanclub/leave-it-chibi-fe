@@ -6,7 +6,6 @@ import FindVet from '../FindVet/FindVet'
 import SuggestionPage from '../SuggestionPage/SuggestionPage'
 import './App.css';
 
-
 function App() {
 
   return (
