@@ -1,8 +1,7 @@
 import React from 'react'
-import Card from '../Card/Card'
 import Modal from 'react-bootstrap/Modal'
 
-import { updateQuery, updateSearchError, showModal } from '../../packages/redux/search-slice';
+import { updateSearchError, showModal } from '../../packages/redux/search-slice';
 import { createCards } from '../../packages/redux/cards-slice'
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
@@ -10,10 +9,10 @@ import apiCalls from '../../apiCalls'
 import './LandingPage.css'
 
 const LandingPage = () => {
-  const query = useSelector(state => state.search.query)
   const cards = useSelector(state => state.cards.cards)
   const searchError = useSelector(state => state.search.error)
   const show = useSelector(state => state.search.show)
+  const modalItem = useSelector(state => state.search.item)
 
   const submitSearch = async e => {
     e.preventDefault()
@@ -37,6 +36,10 @@ const LandingPage = () => {
     store.dispatch(showModal(false))
   }
 
+  const capitalize = string => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   return (
     <main className='landing-page'>
       <section className='landing-form-container'>
@@ -58,11 +61,14 @@ const LandingPage = () => {
       </section>
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Item test</Modal.Title>
+          <Modal.Title>{capitalize(modalItem.attributes.name)}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h3>Test</h3>
-          <p>This is a test sentence</p>
+          <h5>Toxicity Level: {modalItem.attributes.toxicity} / 5</h5>
+          <h5>Description:</h5>
+          <p>{modalItem.attributes.description}</p>
+          <h5>Treatment:</h5>
+          <p>{modalItem.attributes.treatment}</p>
         </Modal.Body>
       </Modal>
     </main>
