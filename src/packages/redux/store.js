@@ -3,6 +3,7 @@ import findVetReducer from './find-vet-slice'
 import searchReducer from './search-slice'
 import cardsReducer from './cards-slice'
 import headerReducer from './header-slice'
+import suggestionReducer from './suggestion-slice'
 // import findVetSlice from './find-vet-slice';
 
 const store = configureStore({
@@ -10,7 +11,8 @@ const store = configureStore({
     findVet: findVetReducer,
     search: searchReducer,
     cards: cardsReducer,
-    header: headerReducer
+    header: headerReducer,
+    suggestion: suggestionReducer,
   },
 })
 

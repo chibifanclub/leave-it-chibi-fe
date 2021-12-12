@@ -23,6 +23,24 @@ const apiCalls = {
       })
   },
 
+  submitSuggestion(suggestion) {
+    return fetch(`https://chibi-be.herokuapp.com/api/v1/suggest`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(suggestion)
+    })
+      .then(response => {
+        this.checkResponse(response)
+        return response.json()
+      })
+      .catch(error => {
+        console.error(error, 'error with submitSuggestion')
+        return error.message
+      })
+  },
+
   checkResponse(response) {
     if (!response.ok) {
       if (response.status === 422 || response.status === 403) {
