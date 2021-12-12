@@ -26,7 +26,7 @@ const Header = props => {
         />
         <h1>Leave it, Chibi</h1>
       </div>
-      <Nav variant='pills' activeKey={activeKey} className='mb-2' onSelect={handleChange}>
+      <Nav fill variant='tabs' activeKey={activeKey} className='mb-2' onSelect={handleChange}>
         <Nav.Item>
           <Nav.Link eventKey=''>Home</Nav.Link>
         </Nav.Item>
