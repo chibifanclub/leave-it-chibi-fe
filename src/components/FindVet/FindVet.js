@@ -17,14 +17,14 @@ const FindVet = () => {
 
   const selectedState = useSelector(state => state.findVet.state);
   const selectedCity = useSelector(state => state.findVet.city)
-  const cards = useSelector(state => state.findVet.cards).slice(0, 5).map(vet =>{
+  const cards = useSelector(state => state.findVet.cards).map(vet =>{
     return (
-      <Card as={Col} className='vet-card'>
-        <Card.Img variant='top' src={vet.attributes.image} className='vet-card-img'/>
+      <Card className='vet-card' bg='warning'>
+        <Card.Img variant='side' src={vet.attributes.image} className='vet-card-img mt-3'/>
         <Card.Body>
-          <Card.Title className='mb-3'>{vet.attributes.name}</Card.Title>
-          <Card.Subtitle className='mb-2'>{vet.attributes.phone}</Card.Subtitle>
-          <Card.Text>{vet.attributes.address}</Card.Text>
+          <Card.Title className='card-title'>{vet.attributes.name}</Card.Title>
+          <Card.Subtitle className='card-phone'>{vet.attributes.phone}</Card.Subtitle>
+          <Card.Text className='card.address'>{vet.attributes.address}</Card.Text>
         </Card.Body>
       </Card>
     )
@@ -80,9 +80,7 @@ const FindVet = () => {
         </>
       </form>
       <Container className='vet-cards-container'>
-        <Row>
-          {cards}
-        </Row>
+        {cards}
       </Container>
     </main>
   )
