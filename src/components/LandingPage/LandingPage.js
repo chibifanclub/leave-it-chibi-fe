@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { updateQuery, updateSearchError } from '../../packages/redux/search-slice';
+import Modal from 'react-bootstrap/Modal'
+
+import { updateQuery, updateSearchError, showModal } from '../../packages/redux/search-slice';
 import { createCards } from '../../packages/redux/cards-slice'
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
@@ -11,6 +13,7 @@ const LandingPage = () => {
   const query = useSelector(state => state.search.query)
   const cards = useSelector(state => state.cards.cards)
   const searchError = useSelector(state => state.search.error)
+  const show = useSelector(state => state.search.show)
 
   const submitSearch = async e => {
     e.preventDefault()
@@ -28,6 +31,10 @@ const LandingPage = () => {
       store.dispatch(updateSearchError(`We couldn't find that item`))
       store.dispatch(createCards([]))
     }
+  }
+
+  const handleClose = () => {
+    store.dispatch(showModal(false))
   }
 
   return (
@@ -49,6 +56,15 @@ const LandingPage = () => {
       <section className='item-cards-container'>
         {cards && cards}
       </section>
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Item test</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h3>Test</h3>
+          <p>This is a test sentence</p>
+        </Modal.Body>
+      </Modal>
     </main>
   )
 }

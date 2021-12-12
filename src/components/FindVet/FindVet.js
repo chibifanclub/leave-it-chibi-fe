@@ -7,9 +7,7 @@ import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
 import apiCalls from '../../apiCalls'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
 
 
 

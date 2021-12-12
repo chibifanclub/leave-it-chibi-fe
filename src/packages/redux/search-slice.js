@@ -4,7 +4,8 @@ const searchSlice = createSlice({
   name: 'searchForm',
   initialState: {
     query: '',
-    error: ''
+    error: '',
+    show: false
   },
   reducers: {
     updateQuery: (state, action) => {
@@ -12,9 +13,12 @@ const searchSlice = createSlice({
     },
     updateSearchError: (state, action) => {
       state.error = action.payload
+    },
+    showModal: (state, action) => {
+      state.show = action.payload
     }
   }
 })
 
-export const { updateQuery, updateSearchError } = searchSlice.actions;
+export const { updateQuery, updateSearchError, showModal } = searchSlice.actions;
 export default searchSlice.reducer

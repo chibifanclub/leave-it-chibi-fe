@@ -5,7 +5,6 @@ import LandingPage from '../LandingPage/LandingPage'
 import FindVet from '../FindVet/FindVet'
 import SuggestionPage from '../SuggestionPage/SuggestionPage'
 import './App.css';
-import Modal from '../Modal/Modal'
 
 function App() {
 
@@ -31,7 +30,6 @@ function App() {
           element={<SuggestionPage />}
         />
       </Routes>
-      {/* <Modal /> */}
       <footer>
       </footer>
     </div>
