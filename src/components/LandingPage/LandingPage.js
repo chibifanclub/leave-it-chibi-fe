@@ -2,13 +2,12 @@ import React from 'react'
 import LandingModal from '../LandingModal/LandingModal.js'
 
 import { updateSearchError, showModal } from '../../packages/redux/search-slice';
-import { createCards } from '../../packages/redux/cards-slice'
 import store from '../../packages/redux/store';
 import { useSelector } from 'react-redux';
 import apiCalls from '../../apiCalls'
 import './LandingPage.css'
 
-const LandingPage = () => {
+const LandingPage = ({ createCards }) => {
   const cards = useSelector(state => state.cards.cards)
   const searchError = useSelector(state => state.search.error)
   const show = useSelector(state => state.search.show)

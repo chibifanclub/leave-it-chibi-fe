@@ -7,13 +7,12 @@ const cardsSlice = createSlice({
     cards: []
   },
   reducers: {
-    createCards: (state, action) => {
-      const cards = action.payload.map(item => <Card item={item} />)
-      state.cards = cards
+    saveCards: (state, action) => {
+      state.cards = action.payload
     },
 
   }
 })
 
-export const { createCards } = cardsSlice.actions;
+export const { saveCards } = cardsSlice.actions;
 export default cardsSlice.reducer

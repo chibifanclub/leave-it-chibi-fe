@@ -5,13 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  overflow: scroll;
+  flex-wrap: wrap;
 }
 
 .suggestion-form {
   display: flex;
   flex-direction: column;
   width: 40vw;
+  min-width: 500px;
   height: 55vh;
+  min-height: 400px;
+  margin: 2vh 0vw;
   align-items: center;
   justify-content: center;
   background-color: #60D394;
@@ -37,7 +42,10 @@
 
 .suggestion-img {
   width: 40vw;
+  min-width: 500px;
   height: 55vh;
+  min-height: 400px;
+  margin: 2vh 0vw;
   border-radius: 20px;
 
 }
