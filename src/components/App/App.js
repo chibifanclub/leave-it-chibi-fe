@@ -30,8 +30,6 @@ function App() {
           element={<SuggestionPage />}
         />
       </Routes>
-      <footer>
-      </footer>
     </div>
   );
 }

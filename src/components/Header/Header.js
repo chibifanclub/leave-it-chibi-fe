@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
 import './Header.css'
 import { updateActiveKey } from '../../packages/redux/header-slice'
 import store from '../../packages/redux/store';
@@ -18,26 +21,25 @@ const Header = props => {
   }
 
   return (
-    <header>
-      <div className='header-logo'>
-        <img
-          src='https://uploads-ssl.webflow.com/58d3fe15690e6c3915136560/5b21e6863b657bdeea83db38_VHCG%20New%20Logo%20Black%20on%20White%20256x256.jpg'
-          className='header-img'
-        />
-        <h1>Leave it, Chibi</h1>
-      </div>
-      <Nav fill variant='tabs' activeKey={activeKey} className='mb-2' onSelect={handleChange}>
-        <Nav.Item>
-          <Nav.Link eventKey=''>Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey='find-vet'>Find a Vet</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey='suggestion'>Make a Suggestion</Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </header>
+    <Navbar collapseOnSelect expand='lg' className='navbar' bg='dark' variant='dark'>
+      <Container fluid>
+      <Navbar.Brand as={Col} md='8'><h1>Leave it, Chibi!</h1></Navbar.Brand>
+      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+      <Navbar.Collapse id='responsive-navbar-nav' className='nav-container'>
+        <Nav variant='tabs' fill activeKey={activeKey} onSelect={handleChange} className='nav' bg='dark' variant='dark'>
+          <Nav.Item>
+            <Nav.Link eventKey='' variant='dark'>Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey='find-vet'>Find a Vet</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey='suggestion'>Make a Suggestion</Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 
