@@ -41,6 +41,18 @@ const apiCalls = {
       })
   },
 
+  getTopFiveItems() {
+    return fetch('https://chibi-be.herokuapp.com/api/v1/top_five')
+      .then(response => {
+        this.checkResponse(response)
+        return response.json()
+      })
+      .catch(error => {
+        console.error(error, 'error with top five')
+        return error.message
+      })
+  },
+
   checkResponse(response) {
     if (!response.ok) {
       if (response.status === 422 || response.status === 403) {

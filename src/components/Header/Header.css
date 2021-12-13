@@ -1,18 +1,15 @@
 
 .navbar {
   width: 100vw;
-  height: 8vh;
-  min-height: 100px;
+  height: 15vh;
+  min-height: 150px;
   text-align: left;
 }
 
 .nav-container {
   width: 20vw;
   height: 8vh;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  
+
 }
 
 .nav {
