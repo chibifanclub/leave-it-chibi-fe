@@ -53,7 +53,6 @@ const apiCalls = {
       })
   },
 
-<<<<<<< HEAD
   sendSearchCount(id) {
     return fetch(`https://chibi-be.herokuapp.com/api/v1/searches?item_id=${id}`, {
       method: 'POST',
@@ -71,8 +70,6 @@ const apiCalls = {
       })
   },
 
-=======
->>>>>>> 7e82098650c98bad33e7240e5af97dc47fb88465
   checkResponse(response) {
     if (!response.ok) {
       if (response.status === 422 || response.status === 403) {
