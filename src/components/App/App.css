@@ -9,10 +9,20 @@
 .emergency-instructions {
   width: 100%;
   height: 5vh;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #EE6055;
+  font-size: calc(35% + .30vw + .30vh);
+}
+
+.emergency-instructions > h4 {
+  margin: 0vh 1vw;
+}
+
+.emergency-instructions > p {
+  margin: 0;
 }
 
 footer {
