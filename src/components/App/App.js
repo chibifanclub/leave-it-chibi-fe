@@ -6,6 +6,7 @@ import FindVet from '../FindVet/FindVet'
 import SuggestionPage from '../SuggestionPage/SuggestionPage'
 import apiCalls from '../../apiCalls'
 import { saveCards } from '../../packages/redux/cards-slice'
+import { showModal, saveModalItem } from '../../packages/redux/search-slice';
 import store from '../../packages/redux/store';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -19,11 +20,17 @@ class App extends React.Component {
     this.createCards(topFiveItems.data)
   }
 
+  displayModal = (item) => {
+    store.dispatch(saveModalItem(item))
+    apiCalls.sendSearchCount(item.id)
+    store.dispatch(showModal(true))
+  }
+
   createCards = items => {
     const cards = items.map(item => {
       return (
-        <Card className='item-card' style={{'min-width': '300px', 'min-height': '350px'}}>
-          <Card.Img src={item.attributes.image} style={{'max-width': '100%', 'max-height': '50%'}}/>
+        <Card className='item-card' style={{ 'min-width': '300px', 'min-height': '350px' }} onClick={() => this.displayModal(item)}>
+          <Card.Img src={item.attributes.image} style={{ 'max-width': '100%', 'max-height': '50%' }} />
           <Card.Body className='card-body'>
             <Card.Title>{item.attributes.name}</Card.Title>
             <Card.Text className='card-text'>{item.attributes.description}</Card.Text>
@@ -45,7 +52,7 @@ class App extends React.Component {
         <Routes>
           <Route
             path='/'
-            element={<LandingPage createCards={this.createCards}/>}
+            element={<LandingPage createCards={this.createCards} />}
           />
           <Route
             path='/find-vet'
