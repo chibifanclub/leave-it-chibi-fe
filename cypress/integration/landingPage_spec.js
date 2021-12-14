@@ -72,4 +72,10 @@ describe('Landing page view', () => {
     cy.get(".landing-form-container").contains("What did your pet eat?")
   })
 
+  it('should return onion if onion is searched for', () => {
+    cy.get('input[type="text"]').type("onion")
+    // cy.get('input[type="text"]').should("include", "onion")
+    cy.get('.item-card').contains('onions')
+  })
+
 });
