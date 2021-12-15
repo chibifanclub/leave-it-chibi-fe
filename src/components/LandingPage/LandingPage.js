@@ -22,11 +22,12 @@ const LandingPage = ({ createCards }) => {
 
   const reviewSearchResults = results => {
     if (results) {
-      store.dispatch(createCards(results))
+      console.log('results', results)
+      createCards(results)
       store.dispatch(updateSearchError(''))
     } else {
       store.dispatch(updateSearchError(`We couldn't find that item`))
-      store.dispatch(createCards([]))
+      createCards([])
     }
   }
 

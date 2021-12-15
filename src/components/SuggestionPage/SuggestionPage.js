@@ -37,7 +37,7 @@ const SuggestionPage = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="itemDescription.ControlTextarea1">
           <Form.Label>Item Description</Form.Label>
-          <Form.Control as="textarea" rows={3} onChange={handleChange} />
+          <Form.Control name="description" as="textarea" rows={3} onChange={handleChange} />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
