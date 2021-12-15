@@ -12,4 +12,9 @@ describe('Find a vet', () => {
   })
 
 
+  // it('should retain the value of onion in search bar', () => {
+  //   cy.get('input[type="text"]').type("onion")
+  //   cy.get('input').should("have.value", "onion")
+  // })
+
 });
