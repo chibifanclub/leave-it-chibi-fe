@@ -68,8 +68,12 @@ describe('Main app and header', () => {
     ).visit("http://localhost:3000/")
   })
 
+  it('should display the emgency notice', () => {
+    cy.get(".emergency-instructions").contains("EMERGENCY")
+  })
+
   it('user should see emergency number', () => {
-    cy.get(".emergency-instructions").contains("426-4435")
+    cy.get(".emergency-instructions").contains("(888) 426-4435")
   })
 
   it('user should go to find a vet page when menu item clicked', () => {

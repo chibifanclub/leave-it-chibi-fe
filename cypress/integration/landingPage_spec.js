@@ -91,4 +91,10 @@ describe('Landing page view', () => {
     cy.get('input[type="text"]').type("garlic")
     cy.get('input').should("have.value", "garlic")
   })
+
+  it('should display a message if no search results found', () => {
+    cy.get('input[type="text"]').type("f")
+    cy.get('.landing-form-container').contains("We couldn't find that item")
+  })
+
 });
