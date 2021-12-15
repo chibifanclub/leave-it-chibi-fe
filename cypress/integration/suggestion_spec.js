@@ -1,7 +1,4 @@
 describe('Landing page view', () => {
-  // it.skip('true should be true', () => {
-  //   expect(true).to.equal(true);
-  // })
 
   beforeEach(() => {
     cy.visit("http://localhost:3000/suggestion")
@@ -28,7 +25,4 @@ describe('Landing page view', () => {
     cy.get('textarea[id="itemDescription.ControlTextarea1"]').type("something to add maybe")
     cy.get('textarea[id="itemDescription.ControlTextarea1"]').should("have.value", "something to add maybe")
   })
-
-  // NOTE:
-  // need to test the submit button
 });

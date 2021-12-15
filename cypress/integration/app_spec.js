@@ -1,7 +1,4 @@
 describe('Main app and header', () => {
-  // it.skip('true should be true', () => {
-  //   expect(true).to.equal(true);
-  // })
 
   beforeEach(() => {
     cy.intercept("https://chibi-be.herokuapp.com/api/v1/top_five",
