@@ -1,5 +1,5 @@
 describe('Find a vet', () => {
-  it('true should be true', () => {
+  it.skip('true should be true', () => {
     expect(true).to.equal(true);
   })
 
