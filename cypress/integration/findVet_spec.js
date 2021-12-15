@@ -11,19 +11,17 @@ describe('Find a vet', () => {
     cy.get(".find-vet-form").contains("Find a Vet")
   })
 
-  // it('should allow user to enter item name', () => {
-  //   cy.get('input[type="text"]').type("rubber ball")
-  //   cy.get('input[type="text"]').should("have.value", "rubber ball")
-  // })
+  it.skip('should allow user to enter a state and city', () => {
+    cy.get('input').type('Nevada').select('[value="Nevada"]')
+    cy.get('input').should('have.value', 'Nevada')
+    cy.get('.sc-bxivhb frjscc').type('Reno')
+    cy.get('.sc-bxivhb frjscc').should('have.value', 'Reno')
+  })
 
-  // it('should allow user to enter item description', () => {
-  //   cy.get('textarea[id="itemDescription.ControlTextarea1"]').type("something to add maybe")
-  //   cy.get('textarea[id="itemDescription.ControlTextarea1"]').should("have.value", "something to add maybe")
-  // })
+  it.skip('should display vets from the entered state', () => {
+    cy.get('input').type('Nevada')
+    cy.get('.vet-cards-container')
+  })
 
-  // it('should retain the value of onion in search bar', () => {
-  //   cy.get('input[type="text"]').type("onion")
-  //   cy.get('input').should("have.value", "onion")
-  // })
 
 });
