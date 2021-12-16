@@ -1,4 +1,3 @@
-#### [🐶 Leave it, Chibi! 🤮](https://github.com/chibifanclub/leave-it-chibi-fe)
 #### [🐶 Leave it, Chibi! 🤮 Deployed App](https://main.dzaswu99pr3fh.amplifyapp.com/)
 
 ## Table of contents
@@ -23,7 +22,13 @@ This project was based off Turing's capstone project. More details can be found 
 
 
 ### <ins>Screenshots</ins>
-![Welcome Screenshot]()
+![Welcome Screenshot](<img width="1399" alt="Welcome screen" src="https://user-images.githubusercontent.com/79122599/146440322-021d1682-d194-49fc-99b2-29a12b8d7d97.png">)
+
+![Detail view](<img width="708" alt="Detail view screen" src="https://user-images.githubusercontent.com/79122599/146440884-dbb46f8d-9a52-4b84-a55d-9fbd102edbd2.png">)
+
+![Find a vet](<img width="1402" alt="Find a vet screen" src="https://user-images.githubusercontent.com/79122599/146440396-dc5d3c5a-e69a-4be8-bbfa-8f9d451cfbcb.png">)
+
+![Make a suggestion](<img width="1411" alt="Make a suggestion screen" src="https://user-images.githubusercontent.com/79122599/146440571-415404d9-c7eb-4977-8750-25918033643f.png">)
 
 ### <ins>Project Board</ins>
 ![Project-Board](https://github.com/orgs/chibifanclub/projects/1)
