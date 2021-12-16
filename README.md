@@ -1,4 +1,5 @@
-#### [🐶 Leave it, Chibi! 🤮 Deployed App](https://main.dzaswu99pr3fh.amplifyapp.com/)
+# 🐶 Leave it, Chibi! 🤮 
+See the [deployed app](https://main.dzaswu99pr3fh.amplifyapp.com/)!
 
 ## Table of contents
 - [Overview](#overview)
@@ -13,7 +14,8 @@
 ## <ins>Overview</ins>
 
 # Leave It, Chibi!
-🦴 still need description
+🦴
+This app is designed to help people with pets who have limited resources quickly answers questions about toxicity and how to treat issues when their pet has ingested something potentially hazardous.  The app shows items along with their toxicity and potential treatment, as well as makes local veternarian contact information available (by state and city).  There is also a feature to suggest edits or additions to the database of items.
 
 This project was based off Turing's capstone project. More details can be found [here](https://mod4.turing.edu/projects/capstone/)
 
