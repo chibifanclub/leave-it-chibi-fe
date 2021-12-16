@@ -19,7 +19,8 @@ This project was based off Turing's capstone project. More details can be found 
 
 ### <ins>Setup</ins>
 1. Fork and Clone the repo
-
+2. Install library dependencies by running `npm install`.
+3. Open React with `npm start`.
 
 ### <ins>Screenshots</ins>
 Welcome and search screen:
@@ -363,14 +364,14 @@ Please see the backend readme for further information, [here](https://github.com
 - [Eric Sergeant](https://www.linkedin.com/in/ericsergeant)
 - [Jessica Jones](https://www.linkedin.com/in/justjj/)
 - [Joshua Benefield](https://www.linkedin.com/in/joshua-benefield-033898206/)
-- [Pretty Boi Khoi](https://www.linkedin.com/in/khoifishpond/)
+- [Khoi Nguyen](https://www.linkedin.com/in/khoifishpond/)
 - [Ida Olson](https://www.linkedin.com/in/idaolson/)
 
 ![Github][Github-img]
 - [Eric Sergeant](https://github.com/EricSergeant)
 - [Jessica Jones](https://github.com/JeJones21)
 - [Joshua Benefield](https://github.com/Jabene)
-- [Pretty Boi Khoi](https://github.com/khoifishpond)
+- [Khoi Nguyen](https://github.com/khoifishpond)
 - [Ida Olson](https://github.com/idaolson)
 
 
