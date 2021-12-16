@@ -4,7 +4,7 @@
 ## Table of contents
 - [Overview](#overview)
 - [Setup](#setup)
-- [Schema](#schema)
+- [Screenshots](#screenshots)
 - [Project Board](#project-board)
 - [API](#api)
 - [Endpoints](#endpoints)
@@ -22,8 +22,8 @@ This project was based off Turing's capstone project. More details can be found 
 1. Fork and Clone the repo
 
 
-### <ins>Schema</ins>
-![Schema Screenshot]()
+### <ins>Screenshots</ins>
+![Welcome Screenshot]()
 
 ### <ins>Project Board</ins>
 ![Project-Board](https://github.com/orgs/chibifanclub/projects/1)
