@@ -20,9 +20,8 @@ This project was based off Turing's capstone project. More details can be found 
 
 ### <ins>Setup</ins>
 1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:{drop,create,migrate}`
-4. Run `bundle exec rspec` to test
+
+
 ### <ins>Schema</ins>
 ![Schema Screenshot]()
 
@@ -146,19 +145,17 @@ This project was based off Turing's capstone project. More details can be found 
 ### <ins>Technologies</ins>
 
 #### Versions
-- Ruby 2.7.2
-- Rails 5.2.5
-
+- bootstrap 5.1.3
+- react 17.0.2
+- redux 4.1.2
+ 
 #### Development
 ![Atom][Atom-img]
-![Figaro][Figaro-img]
 ![Git][Git-img]
 ![Github][Github-img]
 ![Markdown][Markdown-img]
-![PostgreSQL][PostgreSQL-img]
 ![Postman][Postman-img]
-![Rubocop][Rubocop-img]
-![Ruby on Rails][Ruby on Rails-img]
+![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 #### Languages
 ![ActiveRecord][ActiveRecord-img]
