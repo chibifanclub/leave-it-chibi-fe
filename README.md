@@ -1,5 +1,5 @@
 #### [🐶 Leave it, Chibi! 🤮](https://github.com/chibifanclub/leave-it-chibi-fe)
-#### [🐶 Leave it, Chibi! 🤮 App]()
+#### [🐶 Leave it, Chibi! 🤮 Deployed App](https://main.dzaswu99pr3fh.amplifyapp.com/)
 
 ## Table of contents
 - [Overview](#overview)
@@ -151,35 +151,30 @@ This project was based off Turing's capstone project. More details can be found 
  
 #### Development
 ![Atom][Atom-img]
+![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
 ![Git][Git-img]
 ![Github][Github-img]
 ![Markdown][Markdown-img]
 ![Postman][Postman-img]
 ![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
-#### Languages
-![ActiveRecord][ActiveRecord-img]
-![Ruby][Ruby-img]
+#### Languages and Frameworks
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![React](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 #### Deployment
 ![Heroku][Heroku-img]
-![Travis CI][Travis CI-img]
-![Faraday][Faraday-img]
+![AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 
 #### Testing
-![Capybara][Capybara-img]
-![Launchy][Launchy-img]
-![Pry][Pry-img]
-![RSPEC][RSPEC-img]
-![Shoulda Matchers][Shoulda Matchers-img]
-![Simplecov][Simplecov-img]
-![VCR][VCR-img]
-![Webmock][Webmock-img]
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 
 #### Development Principles
 ![OOP][OOP-img]
-![TDD][TDD-img]
-![MVC][MVC-img]
 ![REST][REST-img]
 
 ### <ins>Contributors</ins>
