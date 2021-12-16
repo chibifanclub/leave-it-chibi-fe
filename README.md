@@ -22,19 +22,27 @@ This project was based off Turing's capstone project. More details can be found 
 
 
 ### <ins>Screenshots</ins>
-![Welcome Screenshot](<img width="1399" alt="Welcome screen" src="https://user-images.githubusercontent.com/79122599/146440322-021d1682-d194-49fc-99b2-29a12b8d7d97.png">)
+Welcome and search screen:
 
-![Detail view](<img width="708" alt="Detail view screen" src="https://user-images.githubusercontent.com/79122599/146440884-dbb46f8d-9a52-4b84-a55d-9fbd102edbd2.png">)
+<img width="1399" alt="Welcome screen" src="https://user-images.githubusercontent.com/79122599/146440322-021d1682-d194-49fc-99b2-29a12b8d7d97.png">
 
-![Find a vet](<img width="1402" alt="Find a vet screen" src="https://user-images.githubusercontent.com/79122599/146440396-dc5d3c5a-e69a-4be8-bbfa-8f9d451cfbcb.png">)
+Item detail view screen:
 
-![Make a suggestion](<img width="1411" alt="Make a suggestion screen" src="https://user-images.githubusercontent.com/79122599/146440571-415404d9-c7eb-4977-8750-25918033643f.png">)
+<img width="708" alt="Detail view screen" src="https://user-images.githubusercontent.com/79122599/146440884-dbb46f8d-9a52-4b84-a55d-9fbd102edbd2.png">
+
+Find a vet screen:
+
+<img width="1402" alt="Find a vet screen" src="https://user-images.githubusercontent.com/79122599/146440396-dc5d3c5a-e69a-4be8-bbfa-8f9d451cfbcb.png">
+
+Make a suggestion screen:
+
+<img width="1411" alt="Make a suggestion screen" src="https://user-images.githubusercontent.com/79122599/146440571-415404d9-c7eb-4977-8750-25918033643f.png">
 
 ### <ins>Project Board</ins>
-![Project-Board](https://github.com/orgs/chibifanclub/projects/1)
+The project board can be found [here](https://github.com/orgs/chibifanclub/projects/1).
 
 ### <ins>API</ins>
-![Schema Screenshot]()
+Please see the backend readme for further information, [here](https://github.com/chibifanclub/leave-it-chibi-be).
 
 ### <ins>Endpoints</ins>
 <details>
@@ -42,13 +50,23 @@ This project was based off Turing's capstone project. More details can be found 
   
   * Method: GET
  
-  * Endpoint: api/v1/items
+  * Endpoint: https://chibi-be.herokuapp.com/api/v1/items
+  
+  Send request in the body: 
+  
+  ```json
+  {
+    "name": "onion"
+  }
+  ```
+  Returns: 
+  
 ```json
   {
     "data": [
       {
         "id": 1,
-        "type": "items",
+        "type": "item",
         "attributes": {
           "name": "remote",
           "description": "plastic",
@@ -74,56 +92,56 @@ This project was based off Turing's capstone project. More details can be found 
     "data": [
       {
         "id": 1,
-        "type": "items",
+        "type": "item",
         "attributes": {
           "name": "remote",
           "description": "plastic",
           "toxicity": 5,
-          "treatment": "big surgery", 
+          "treatment": "big surgery",
           "image": "https://cdn.vox-cdn.com/thumbor/pQ8yv3BoiduWTWBU8oE-8htJLao=/0x0:2040x1360/920x613/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/69149145/DSCF3621_Edited.0.jpg"
         }
       },
     {
-      "id": 2,
-        "type": "items",
+      "id": 4,
+        "type": "item",
         "attributes": {
           "name": "onion",
           "description": "vegetable, it will be a slow kill",
           "toxicity": 5,
-          "treatment": "stomach pump and prayer if you believe", 
+          "treatment": "stomach pump and prayer if you believe",
           "image": "https://thesmartcanine.com/wp-content/uploads/2016/11/can-dogs-eat-onion-rings.jpg"
         }
       },
     {
-      "id": 3,
-        "type": "items",
+      "id": 7,
+        "type": "item",
         "attributes": {
           "name": "grapes",
           "description": "fruit, if you drop it on the floor, catch it before they do",
           "toxicity": 3,
-          "treatment": "induce vomiting", 
+          "treatment": "induce vomiting",
           "image": "https://i.pinimg.com/564x/bd/fd/74/bdfd742863ae216d6a9c8061d7991cd6.jpg"
         }
       },
     {
-      "id": 4,
-        "type": "items",
+      "id": 8,
+        "type": "item",
         "attributes": {
           "name": "chocolate",
           "description": "opposite of vanilla",
           "toxicity": 2,
-          "treatment": "wait it out, my pup ate a candy bar and survived, JUST DON't LET IT HAPPEN AGAIN", 
+          "treatment": "wait it out, my pup ate a candy bar and survived, JUST DON't LET IT HAPPEN AGAIN",
           "image": "https://images.wagwalkingweb.com/media/daily_wag/sense_guides/can-dogs-live-after-eating-chocolate/intro/Chocolate2.jpg"
         }
       },
     {
-      "id": 5,
-        "type": "items",
+      "id": 10,
+        "type": "item",
         "attributes": {
           "name": "tequila",
           "description": "alcohol",
           "toxicity": 2,
-          "treatment": "pour peroxide down their throat and make them run in circles and watch a miracle happen", 
+          "treatment": "pour peroxide down their throat and make them run in circles and watch a miracle happen",
           "image": "https://media.istockphoto.com/photos/dog-having-fun-and-drinking-alcohol-picture-id543473028"
         }
       }
@@ -135,15 +153,173 @@ This project was based off Turing's capstone project. More details can be found 
 
 <details>
   <summary>Suggestions</summary>
+
+  * Method: POST
+
+  * Endpoint: https://chibi-be.herokuapp.com/api/v1/suggest
+```json
+  {
+    "name": "raisin",
+    "description": "shriveled up grapes"
+  }
+  ```
+  * If the suggestion already in items, it will return item: 
+  
+  * For example:
+  
+  ```json
+  {
+    "name": "candy"
+  }
+  ```
+  * Will return:
+  
+  ```json
+  
+  {
+    "data": [
+        {
+            "id": "11",
+            "type": "item",
+            "attributes": {
+                "name": "candies",
+                "description": "Candy, gum, toothpaste, baked goods, and some diet foods are sweetened with xylitol. It can cause your dog's blood sugar to drop and can also cause liver failure... Eventually, your dog may have seizures.",
+                "toxicity": 3,
+                "treatment": "There is no antidote for xylitol poisoning, although treatment with intravenous dextrose (glucose) supplementation and liver protective drugs are beneficial.",
+                "image": "https://assets3.thrillist.com/v1/image/2895077/1200x600/crop;"
+            }
+        }
+    ]
+}
+  
+  
+```
+</details>
+
+<details>
+  <summary>Get one item</summary>
+  
+  * Method: GET
+ 
+  * Endpoint: https://chibi-be.herokuapp.com/api/v1/:id (for example: https://chibi-be.herokuapp.com/api/v1/8)
+  
+```json
+  {
+    "data": {
+        "id": "2",
+        "type": "item", 
+        "attributes": {
+            "name": "garlic",
+            "description": "Toxic doses of garlic can cause damage to the red blood cells (making them more likely to       rupture) leading to anemia. GI upset can also occur (e.g., nausea, drooling, abdominal pain, vomiting, diarrhea). ... While tiny amounts of these foods in some pets, especially dogs, may be safe, large amounts can be very toxic.",
+            "toxicity": 3,
+            "treatment": "Your veterinarian might recommend intravenous fluids to keep him hydrated, and may prescribe a medication to control vomiting. In severe cases, blood transfusions might be necessary.",
+            "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F10%2F12%2Fcan-dog-eat-garlic.png&q=85"
+        }
+    }
+}
+
+```
+</details>
+
+<details>
+  <summary>Post to searches (to track popularity)</summary>
   
   * Method: POST
  
-  * Endpoint: api/v1/suggestions
-```json
+  * https://chibi-be.herokuapp.com/api/v1/searches?item_id=:id (for example: https://chibi-be.herokuapp.com/api/v1/searches?item_id=4)
+  
+  If the item has been searched previously, the response will be:
+  
+  ```json
   {
-    "name": "raisin"
-    "description": "shriveled up grapes"
+    "response": "Search count increased"
   }
+  ```
+  If the item has not been searched previously, the response will be: 
+  
+  ```json
+  {
+    "response": "Search created"
+  }
+  ```
+</details>
+
+<details>
+  <summary>Get Veterinarians</summary>
+  
+  * Method: GET
+
+  * Parameters: City, State ex. "Cheyenne, WY"
+                or ZIP code ex. "82001"
+ 
+  * Endpoint: https://chibi-be.herokuapp.com/api/v1/veterinarians (for example: https://chibi-be.herokuapp.com/api/v1/veterinarians?location=Denver,CO)
+  
+```json
+{
+    "data": [
+        {
+            "id": null,
+            "type": "veterinarian",
+            "attributes": {
+                "name": "5280 Veterinary Care",
+                "address": "3100 Gilpin St, Denver, CO 80205",
+                "phone": "(720) 789-7000",
+                "reviews": 89,
+                "rating": 4.5,
+                "image": "https://s3-media3.fl.yelpcdn.com/bphoto/Rw7hk8x4D8XUWJPt5VwYwA/o.jpg"
+            }
+        },
+        {
+            "id": null,
+            "type": "veterinarian",
+            "attributes": {
+                "name": "Park Hill Veterinary Medical Center",
+                "address": "2255 Oneida St, Denver, CO 80207",
+                "phone": "(303) 388-2255",
+                "reviews": 160,
+                "rating": 4.0,
+                "image": "https://s3-media2.fl.yelpcdn.com/bphoto/fpw6Uzz-YPg9_NhTvvibwQ/o.jpg"
+            }
+        },
+        {
+            "id": null,
+            "type": "veterinarian",
+            "attributes": {
+                "name": "Whole Pet Wellness Veterinary Services",
+                "address": "Denver, CO 80207",
+                "phone": "(720) 583-4442",
+                "reviews": 17,
+                "rating": 5.0,
+                "image": "https://s3-media1.fl.yelpcdn.com/bphoto/DMD8hBAxPp9iiqohe-JmCA/o.jpg"
+            }
+        },
+        {
+            "id": null,
+            "type": "veterinarian",
+            "attributes": {
+                "name": "VCA Alameda East Veterinary Hospital",
+                "address": "9770 E Alameda Ave, Denver, CO 80247",
+                "phone": "(303) 366-2639",
+                "reviews": 297,
+                "rating": 3.5,
+                "image": "https://s3-media2.fl.yelpcdn.com/bphoto/clnrDyqit6qUSBbkirujpw/o.jpg"
+            }
+        },
+        {
+            "id": null,
+            "type": "veterinarian",
+            "attributes": {
+                "name": "Caring Pathways",
+                "address": "Englewood, CO 80112",
+                "phone": "(720) 287-2553",
+                "reviews": 136,
+                "rating": 5.0,
+                "image": "https://s3-media4.fl.yelpcdn.com/bphoto/gep_G4SXFE7RYVmj7sO_3g/o.jpg"
+            }
+        }
+    ]
+}
+
 ```
 </details>
 
